@@ -4,7 +4,7 @@ REM this stuff should unpack everything except .exe files
     @pushd %CD%
     @cd %%F
        @FOR %%X in (*.rar *.zip *.jar *.war *.tar *.gz *.tar.gz) DO (
-	        "%1\7z.exe" x -y "%%X"
+	        %1\7z.exe x -y "%%X"
 	    )
     @popd
 )

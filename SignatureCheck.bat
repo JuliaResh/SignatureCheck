@@ -10,7 +10,7 @@
         @echo ##teamcity[testSuiteStarted name='!current_folder!']
         @IF NOT [!current_file!]==[] (
             @echo ##teamcity[testStarted name='!current_file!']
-            @FOR /f "delims=" %%i in ('"%teamcity.build.checkoutDir%\signtool.exe" verify /pa %%X 2^>^&1') do set output=%%i
+            @FOR /f "delims=" %%i in ('"%1\signtool.exe" verify /pa %%X 2^>^&1') do set output=%%i
 	        @IF NOT "!output!"=="!output:Successfully verified=!" (
                     @echo ##teamcity[name='!current_file!' message='!output!']
 	        ) else (
